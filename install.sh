@@ -4,7 +4,7 @@
 
 # --- Configuração ---
 # MUITO IMPORTANTE: Mude para o URL do seu repositório de dotfiles!
-DOTFILES_REPO_URL="https://github.com/SEU_USUARIO/dotfiles.git"
+DOTFILES_REPO_URL="https://github.com/ineblinavel/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
 
 # --- Funções de Ajuda ---
