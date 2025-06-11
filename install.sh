@@ -20,7 +20,7 @@ fail() {
 install_dependencies() {
   info "Instalando dependências essenciais..."
   sudo apt update
-  sudo apt install -y zsh git curl fzf bat exa python3-pip unzip fontconfig
+  sudo apt install -y zsh git curl fzf bat eza python3-pip unzip fontconfig
   [ $? -eq 0 ] && success "Dependências instaladas." || fail "Falha ao instalar dependências."
 
   info "Instalando The Fuck..."
