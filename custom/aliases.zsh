@@ -15,10 +15,12 @@ alias bright='/home/luan/scripts/brightness_control.sh'
 # --- Aliases de Produtividade (Sugestões) ---
 # Substitutos modernos (instale com 'sudo apt install exa bat')
 # Lembre-se que em Debian/Ubuntu, o executável do bat é 'batcat'.
-alias ls='exa --icons'
-alias la='exa -la'
-alias l='exa -l --header'
-alias tree='exa --tree'
+# Substitutos modernos (instale com 'sudo apt install eza bat')
+# Lembre-se que em Debian/Ubuntu, o executável do bat é 'batcat'.
+alias ls='eza --icons'
+alias la='eza -la'
+alias l='eza -l --header'
+alias tree='eza --tree'
 alias cat='batcat'
 
 # Navegação
