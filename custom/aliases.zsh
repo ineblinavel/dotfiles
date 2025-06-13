@@ -22,6 +22,7 @@ alias la='eza -la'
 alias l='eza -l --header'
 alias tree='eza --tree'
 alias cat='batcat'
+alias fd='fdfind'
 
 # Navegação
 alias ..='cd ..'

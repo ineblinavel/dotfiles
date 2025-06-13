@@ -14,7 +14,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     git
-    z
     zsh-autosuggestions
     zsh-syntax-highlighting
     command-not-found
@@ -54,7 +53,12 @@ setopt INC_APPEND_HISTORY
 
 # (Opcional) Ativação do FZF (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Configura o fzf para usar o 'bat' como preview e melhora a aparência
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "if [ -d {2..} ]; then exa --tree --color=always {2..}; else bat --color=always --style=numbers --line-range=:500 {2..}; fi"'
+
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # Esta linha DEVE ser a última do arquivo.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
