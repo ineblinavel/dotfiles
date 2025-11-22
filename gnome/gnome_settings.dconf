@@ -1,0 +1,303 @@
+[org/gnome/baobab/ui]
+is-maximized=false
+window-size=(960, 600)
+
+[org/gnome/calendar]
+active-view='month'
+window-maximized=true
+window-size=(768, 600)
+
+[org/gnome/control-center]
+last-panel='bluetooth'
+window-state=(980, 640, false)
+
+[org/gnome/desktop/app-folders]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/System]
+apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'im-config.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.SystemMonitor.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///home/luan/.config/background'
+picture-uri-dark='file:///home/luan/.config/background'
+
+[org/gnome/desktop/break-reminders/eyesight]
+play-sound=true
+
+[org/gnome/desktop/break-reminders/movement]
+duration-seconds=uint32 300
+interval-seconds=uint32 1800
+play-sound=true
+
+[org/gnome/desktop/datetime]
+automatic-timezone=true
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'br')]
+
+[org/gnome/desktop/interface]
+accent-color='teal'
+clock-format='24h'
+color-scheme='prefer-dark'
+cursor-theme='ArcDusk-cursors'
+document-font-name='Noto Mono 11'
+font-name='Noto Mono 12'
+gtk-theme='WhiteSur-Dark'
+monospace-font-name='Noto Mono 11'
+
+[org/gnome/desktop/notifications]
+application-children=['firefox-esr', 'org-gnome-software', 'gnome-power-panel', 'org-gnome-characters', 'org-gnome-shell-extensions', 'org-gnome-nautilus', 'org-gnome-terminal', 'grub-customizer', 'org-gnome-baobab']
+
+[org/gnome/desktop/notifications/application/firefox-esr]
+application-id='firefox-esr.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/grub-customizer]
+application-id='grub-customizer.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-characters]
+application-id='org.gnome.Characters.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=false
+
+[org/gnome/desktop/peripherals/mouse]
+speed=0.0
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/search-providers]
+disabled=['org.gnome.Terminal.desktop']
+sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
+[org/gnome/desktop/wm/preferences]
+button-layout=':minimize,maximize,close'
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/gnome-system-monitor]
+show-dependencies=false
+show-whose-processes='user'
+
+[org/gnome/gnome-system-monitor/proctree]
+col-26-visible=false
+col-26-width=0
+
+[org/gnome/mutter]
+overlay-key='Super_L'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+initial-size-file-chooser=(890, 550)
+maximized=true
+
+[org/gnome/nm-applet/eap/3f46e218-f81d-46f6-b917-66eded4610d4]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/portal/filechooser/com.visualstudio.code]
+last-folder-path='/home/luan/Documents/Trabalho_BD'
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-schedule-automatic=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Alt>w'
+command='kitty'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=false
+power-saver-profile-on-low-battery=false
+
+[org/gnome/shell]
+disable-user-extensions=false
+disabled-extensions=['dash-in-panel@fthx', 'dash-to-panel@jderose9.github.com']
+enabled-extensions=['blur-my-shell@aunetx', 'arcmenu@arcmenu.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'add-to-desktop@tommimon.github.com', 'Move_Clock@rmy.pobox.com']
+favorite-apps=['firefox-esr.desktop', 'kitty.desktop', 'com.visualstudio.code.desktop']
+last-selected-power-profile='power-saver'
+welcome-dialog-last-shown-version='48.4'
+
+[org/gnome/shell/extensions/arcmenu]
+custom-menu-button-icon-size=28.0
+distro-icon=1
+menu-background-color='rgba(19,5,84,0.92)'
+menu-border-color='rgb(41,50,55)'
+menu-border-radius=7
+menu-border-width=0
+menu-button-bg-color=(false, 'rgba(242,242,242,0.2)')
+menu-button-fg-color=(false, 'rgb(242,242,242)')
+menu-button-icon='Distro_Icon'
+menu-font-size=10
+menu-foreground-color='rgb(242,242,242)'
+menu-item-active-bg-color='rgba(189,230,251,0.15)'
+menu-item-active-fg-color='rgb(189,230,251)'
+menu-item-hover-bg-color='rgba(189,230,251,0.08)'
+menu-item-hover-fg-color='rgb(189,230,251)'
+menu-layout='Eleven'
+menu-separator-color='rgba(99,99,98,0.56)'
+override-menu-theme=false
+pinned-apps=[{'id': 'firefox.desktop'}, {'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Terminal.desktop'}, {'id': 'gnome-extensions prefs arcmenu@arcmenu.com', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}, {'id': 'com.visualstudio.code.desktop'}]
+position-in-panel='Center'
+prefs-visible-page=0
+recently-installed-apps=['kdesystemsettings.desktop']
+runner-font-size=13
+runner-menu-height=400
+runner-menu-width=600
+runner-show-frequent-apps=true
+search-entry-border-radius=(true, 25)
+update-notifier-project-version=69
+
+[org/gnome/shell/extensions/blur-my-shell]
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=true
+brightness=0.59999999999999998
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/dash-in-panel]
+button-margin=3
+show-apps=true
+show-dash=false
+show-running=false
+
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=true
+background-color='rgb(53,132,228)'
+background-opacity=0.0
+click-action='skip'
+custom-background-color=false
+custom-theme-shrink=true
+dash-max-icon-size=39
+disable-overview-on-startup=false
+dock-fixed=false
+dock-position='LEFT'
+extend-height=false
+height-fraction=0.90000000000000002
+hide-tooltip=false
+icon-size-fixed=false
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+max-alpha=0.80000000000000004
+preferred-monitor=-2
+preferred-monitor-by-connector='eDP'
+running-indicator-style='DEFAULT'
+show-icons-emblems=false
+show-mounts=false
+show-mounts-network=false
+show-mounts-only-mounted=true
+show-trash=false
+transparency-mode='FIXED'
+workspace-agnostic-urgent-windows=true
+
+[org/gnome/shell/extensions/dash-to-panel]
+extension-version=72
+panel-anchors='{}'
+panel-element-positions='{}'
+panel-lengths='{}'
+panel-positions='{}'
+panel-sizes='{}'
+prefs-opened=false
+
+[org/gnome/shell/extensions/user-theme]
+name='WhiteSur-Dark'
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/software]
+check-timestamp=int64 1763810107
+first-run=false
+flatpak-purge-timestamp=int64 1763660704
+install-timestamp=int64 1762900853
+packagekit-historical-updates-timestamp=uint64 1762900853
+update-notification-timestamp=int64 1762900912
+
+[org/gnome/terminal/legacy/keybindings]
+copy='<Primary>c'
+paste='<Primary>v'
+
+[org/gtk/gtk4/settings/color-chooser]
+custom-colors=[(0.074509806931018829, 0.019607843831181526, 0.32941177487373352, 0.92000001668930054), (0.075635947287082672, 0.019800001755356789, 0.33000001311302185, 0.92000001668930054), (0.10196076333522797, 0.37254899740219116, 0.70588237047195435, 0.8033333420753479), (0.0, 0.0, 0.0, 0.85000002384185791), (0.24999998509883881, 0.37000000476837158, 0.75, 0.41999998688697815), (0.75, 0.24999998509883881, 0.24999998509883881, 0.0), (0.11764705926179886, 0.14509804546833038, 0.16078431904315948, 1.0), (0.94901961088180542, 0.94901961088180542, 0.94901961088180542, 1.0)]
+selected-color=(true, 0.10196076333522797, 0.37254899740219116, 0.70588237047195435, 0.8033333420753479)
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true
+sort-directories-first=false
+
+[org/gtk/settings/file-chooser]
+clock-format='24h'
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=230
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(345, 82)
+window-size=(1231, 902)

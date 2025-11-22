@@ -62,3 +62,6 @@ eval "$(zoxide init zsh)"
 # Esta linha DEVE ser a última do arquivo.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# Created by `pipx` on 2025-11-15 03:24:10
+export PATH="$PATH:/home/luan/.local/bin"

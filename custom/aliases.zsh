@@ -110,3 +110,5 @@ function git_add_commit() {
 }
 zle -N git_add_commit
 bindkey '^g' git_add_commit
+
+alias grubc="sudo micro /etc/default/grub"
