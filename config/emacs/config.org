@@ -1,0 +1,5 @@
+#+TITLE: Configs of emacs
+#+AUTHOR: Luan Ribeiro (Ineblinavel)
+#+DESCRIPTION: Minhas Configuraçoes do Emacs.
+#+STARTUP: showeverything
+#+OPTIONS: toc:2

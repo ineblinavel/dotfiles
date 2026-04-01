@@ -15,12 +15,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     zsh-autosuggestions
-    zsh-syntax-highlighting
+    fast-syntax-highlighting
+    zsh-completions
     command-not-found
     aliases
     sudo
     dirhistory
     web-search
+    fzf-tab
+    history-substring-search
+    you-should-use
   )
 
 # Carrega o Oh My Zsh
@@ -29,8 +33,8 @@ source $ZSH/oh-my-zsh.sh
 # --- Configurações Avançadas de Histórico ---
 
 # Aumenta o tamanho do histórico
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
 # Ignora comandos duplicados no histórico
@@ -51,6 +55,12 @@ setopt INC_APPEND_HISTORY
 # --- Configurações de Ferramentas Adicionais ---
 # Suas configs (aliases, exports) são carregadas de ~/.oh-my-zsh/custom/
 
+# Configuração do nnn - file browser
+export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
+export NNN_PLUG='o:fzopen;p:preview-tui;d:diffs;v:imgview'
+export EDITOR="code"
+export VISUAL="code"
+
 # (Opcional) Ativação do FZF (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Configura o fzf para usar o 'bat' como preview e melhora a aparência
@@ -65,3 +75,14 @@ eval "$(zoxide init zsh)"
 
 # Created by `pipx` on 2025-11-15 03:24:10
 export PATH="$PATH:/home/luan/.local/bin"
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Carregar variáveis de ambiente seguras (API keys, etc)
+[ -f ~/.config/env/.env ] && source ~/.config/env/.env
+
+[ -f "/home/luan/.ghcup/env" ] && . "/home/luan/.ghcup/env" # ghcup-env

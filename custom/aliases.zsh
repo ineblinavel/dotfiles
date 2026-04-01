@@ -7,22 +7,35 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias zshconfig="nvim ~/.zshrc"
 alias omz="cd ~/.oh-my-zsh"
 alias aliases="nvim ~/.oh-my-zsh/custom/aliases.zsh" # Alias para editar este arquivo
-
+alias ccp="xclip -selection clipboard"
 # --- Aliases para Scripts Pessoais ---
-alias keyb='/home/luan/scripts/solkeyboard.sh'
-alias bright='/home/luan/scripts/brightness_control.sh'
+
+
 
 # --- Aliases de Produtividade (Sugestões) ---
-# Substitutos modernos (instale com 'sudo apt install exa bat')
-# Lembre-se que em Debian/Ubuntu, o executável do bat é 'batcat'.
-# Substitutos modernos (instale com 'sudo apt install eza bat')
-# Lembre-se que em Debian/Ubuntu, o executável do bat é 'batcat'.
+# Substitutos modernos - ferramentas CLI melhoradas
 alias ls='eza --icons'
 alias la='eza -la'
 alias l='eza -l --header'
+alias ll='eza -lah'
 alias tree='eza --tree'
+alias lt='eza --tree -L 3'
 alias cat='batcat'
 alias fd='fdfind'
+
+# Ferramentas modernas (se instaladas)
+if command -v rg &> /dev/null; then
+    alias grep='rg'
+fi
+
+if command -v delta &> /dev/null; then
+    alias diff='delta'
+fi
+
+if command -v lazygit &> /dev/null; then
+    alias lg='lazygit'
+    alias glog='lazygit'
+fi
 
 # Navegação
 alias ..='cd ..'

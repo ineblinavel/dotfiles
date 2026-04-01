@@ -1,0 +1,63 @@
+# Dotfiles .gitignore
+# Arquivos sensíveis e temporários
+
+# Variáveis de ambiente e secrets
+*.env
+*.env.*
+.env
+.env.*
+*_env
+*secret*
+*token*
+*key*
+*.pem
+*.key
+
+# Arquivos de histórico
+.zsh_history
+.bash_history
+.python_history
+.node_repl_history
+
+# Cache e temporários
+*.cache
+.cache/
+*.log
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Credenciais
+.credentials
+.aws/credentials
+.ssh/*
+!.ssh/config.example
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Diretórios locais
+local/
+tmp/
+temp/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.emacs.d/.cache/
+.emacs.d/auto-save-list/
+.emacs.d/elpa/
+.emacs.d/eln-cache/
+
+# Specific to this repo (se necessário)
+# config/env/
