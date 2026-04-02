@@ -125,3 +125,15 @@ zle -N git_add_commit
 bindkey '^g' git_add_commit
 
 alias grubc="sudo micro /etc/default/grub"
+
+# Backup automático
+alias backup-dotfiles='~/.local/bin/backup-configs.sh'
+
+# Docker Compose shortcuts (usa o plugin oficial)
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs -f'
+alias dcr='docker compose restart'
+alias dcp='docker compose ps'
+alias dcb='docker compose build'
