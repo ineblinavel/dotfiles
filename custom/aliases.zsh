@@ -96,6 +96,113 @@ extract() {
     fi
 }
 
+# --- Novas Funções Úteis (2026-04-02) ---
+
+# Jump rápido para projetos com FZF
+cdproject() {
+  local project
+  # Procura em ~/git e permite busca interativa
+  if [ -d ~/git ]; then
+    project=$(ls ~/git 2>/dev/null | fzf --preview 'ls -lah ~/git/{}' --height 40% --border)
+    if [ -n "$project" ]; then
+      cd ~/git/"$project"
+      echo "📂 Projeto: $project"
+      # Mostrar status git se for repo
+      if [ -d .git ]; then
+        echo ""
+        git status -sb
+      fi
+    fi
+  else
+    echo "Diretório ~/git não existe"
+  fi
+}
+
+# Sistema de notas rápidas
+note() {
+  local notes_file="$HOME/.notes/quick-notes.txt"
+  mkdir -p "$HOME/.notes"
+  
+  if [ $# -eq 0 ]; then
+    echo "📝 Uso: note <sua nota aqui>"
+    echo "   ou: notes (para ver todas)"
+    return 1
+  fi
+  
+  echo "$(date '+%Y-%m-%d %H:%M') | $*" >> "$notes_file"
+  echo "✅ Nota salva"
+}
+
+# Ver todas as notas
+notes() {
+  local notes_file="$HOME/.notes/quick-notes.txt"
+  
+  if [ ! -f "$notes_file" ]; then
+    echo "📝 Nenhuma nota ainda. Use: note <sua nota>"
+    return
+  fi
+  
+  echo "📝 NOTAS RÁPIDAS"
+  echo "════════════════"
+  cat "$notes_file"
+  echo ""
+  echo "Total: $(wc -l < "$notes_file") notas"
+}
+
+# Estatísticas git do repositório atual
+gitstats() {
+  if [ ! -d .git ]; then
+    echo "❌ Não é um repositório git"
+    return 1
+  fi
+  
+  echo "📊 GIT STATISTICS"
+  echo "═════════════════"
+  echo ""
+  echo "📦 Repositório: $(basename $(git rev-parse --show-toplevel))"
+  echo "🌿 Branch atual: $(git branch --show-current)"
+  echo ""
+  echo "📈 Commits:"
+  echo "  • Total: $(git rev-list --count HEAD 2>/dev/null || echo 0)"
+  echo "  • Este ano: $(git log --since='1 year ago' --oneline 2>/dev/null | wc -l)"
+  echo "  • Este mês: $(git log --since='1 month ago' --oneline 2>/dev/null | wc -l)"
+  echo "  • Esta semana: $(git log --since='1 week ago' --oneline 2>/dev/null | wc -l)"
+  echo ""
+  echo "👤 Top 5 contribuidores:"
+  git shortlog -sn --no-merges | head -5
+  echo ""
+  echo "📝 Último commit:"
+  git log -1 --pretty=format:"  %h - %s (%cr)" 2>/dev/null
+  echo ""
+}
+
+# Status do sistema
+syshealth() {
+  echo "🖥️  SYSTEM HEALTH"
+  echo "═════════════════"
+  echo ""
+  echo "💻 CPU:"
+  echo "  $(top -bn1 | grep "Cpu(s)" | awk '{print "Uso: " $2}' || echo "N/A")"
+  echo ""
+  echo "🧠 RAM:"
+  echo "  $(free -h | awk 'NR==2{printf "Uso: %s / %s (%.0f%%)", $3,$2,$3*100/$2}')"
+  echo ""
+  echo "💾 Disco (/):"
+  echo "  $(df -h / | awk 'NR==2{printf "Uso: %s / %s (%s)", $3,$2,$5}')"
+  echo ""
+  echo "⏰ Uptime:"
+  echo "  $(uptime -p)"
+  echo ""
+  
+  # Mostrar temperatura CPU se disponível
+  if command -v sensors &> /dev/null; then
+    echo "🌡️  Temperatura:"
+    sensors | grep -E "Core|temp" | head -3
+  fi
+}
+
+# --- Fim das Novas Funções ---
+
 # --- Meus Atalhos de Teclado (Keybindings) ---
 
 # Faz as teclas Home e End funcionarem como esperado
