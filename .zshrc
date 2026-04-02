@@ -68,6 +68,11 @@ export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "if [ 
 
 eval "$(zoxide init zsh)"
 
+# Pyenv - Python version manager
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # Esta linha DEVE ser a última do arquivo.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -86,3 +91,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f ~/.config/env/.env ] && source ~/.config/env/.env
 
 [ -f "/home/luan/.ghcup/env" ] && . "/home/luan/.ghcup/env" # ghcup-env
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
