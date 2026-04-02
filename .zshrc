@@ -55,11 +55,18 @@ setopt INC_APPEND_HISTORY
 # --- Configurações de Ferramentas Adicionais ---
 # Suas configs (aliases, exports) são carregadas de ~/.oh-my-zsh/custom/
 
+typeset -U path PATH
+path+=(
+  "$HOME/.local/bin"
+  "$HOME/.local/share/gem/ruby/3.3.0/bin"
+  "$HOME/.npm-global/bin"
+)
+
 # Configuração do nnn - file browser
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
 export NNN_PLUG='o:fzopen;p:preview-tui;d:diffs;v:imgview'
 export EDITOR="code"
-export VISUAL="code"
+export VISUAL="$EDITOR"
 
 # (Opcional) Ativação do FZF (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -73,23 +80,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# Esta linha DEVE ser a última do arquivo.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-# Created by `pipx` on 2025-11-15 03:24:10
-export PATH="$PATH:/home/luan/.local/bin"
-export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
-
-
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # Carregar variáveis de ambiente seguras (API keys, etc)
 [ -f ~/.config/env/.env ] && source ~/.config/env/.env
 
+[ -x /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f "/home/luan/.ghcup/env" ] && . "/home/luan/.ghcup/env" # ghcup-env
 
 export NVM_DIR="$HOME/.nvm"
@@ -97,5 +91,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# Esta linha DEVE ser a última do arquivo.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

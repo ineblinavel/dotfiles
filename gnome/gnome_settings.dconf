@@ -137,7 +137,7 @@ initial-size-file-chooser=(890, 550)
 maximized=true
 
 [org/gnome/nm-applet/eap/3f46e218-f81d-46f6-b917-66eded4610d4]
-ignore-ca-cert=true
+ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/portal/filechooser/com.visualstudio.code]
