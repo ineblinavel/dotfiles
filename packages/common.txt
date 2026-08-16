@@ -1,0 +1,9 @@
+zsh
+git
+curl
+fzf
+ripgrep
+bat
+fd-find
+unzip
+fontconfig

@@ -1,0 +1,3 @@
+# Copie para ~/.config/dotfiles/local.zsh e personalize sem versionar segredos.
+export WORKSPACE="$HOME/Projects"
+# export GITHUB_TOKEN="carregue de um gerenciador de segredos"

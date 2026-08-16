@@ -1,0 +1,37 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        image: [debian:stable-slim, ubuntu:24.04]
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    steps:
+      - name: Dependências
+        run: apt-get update && apt-get install -y bash git shellcheck python3 python3-ruff
+      - uses: actions/checkout@v4
+      - name: Sintaxe Bash
+        run: bash -n install.sh dotfiles push_dotfiles.sh lib/*.sh profiles/*.sh features/*.sh scripts/*.sh tests/*.sh gnome/settings/*.sh
+      - name: ShellCheck
+        run: shellcheck -e SC1090,SC1091,SC2034,SC2317 install.sh dotfiles push_dotfiles.sh lib/*.sh profiles/*.sh features/*.sh scripts/*.sh tests/*.sh gnome/settings/*.sh
+      - name: Python
+        run: ruff check scripts/*.py && python3 -m compileall -q scripts
+      - name: Testes
+        run: bash tests/run.sh
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

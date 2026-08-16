@@ -1,0 +1,18 @@
+[init]
+    defaultBranch = main
+[pull]
+    rebase = true
+[rebase]
+    autoStash = true
+[push]
+    autoSetupRemote = true
+[fetch]
+    prune = true
+[core]
+    excludesFile = ~/.config/git/ignore
+[include]
+    path = ~/.config/git/local
+[includeIf "gitdir:~/work/"]
+    path = ~/.config/git/work
+[includeIf "gitdir:~/Documents/Trabalho/"]
+    path = ~/.config/git/work

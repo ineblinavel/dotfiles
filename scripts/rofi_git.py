@@ -16,7 +16,7 @@ def open_in_browser(url):
 
 def open_in_rofi(choices):
     blob = "\n".join(choices)
-    cmd = ['rofi', '-dmenu', '-p' 'repos']
+    cmd = ['rofi', '-dmenu', '-p', 'repos']
     result = run(cmd, input=blob, capture_output=True, text=True)
     return result.stdout.strip()
 
@@ -24,11 +24,13 @@ def open_in_rofi(choices):
 def get_all_projects():
     url = "https://api.github.com/user/repos"
     token = os.getenv("GITHUB_TOKEN")
+    if not token:
+        raise SystemExit("Defina GITHUB_TOKEN para consultar seus repositórios privados")
     request = urllib.request.Request(url)
     request.add_header("Authorization", f"Bearer {token}")
     request.add_header("Accept", "application/vnd.github+json")
 
-    with urllib.request.urlopen(request) as response:
+    with urllib.request.urlopen(request, timeout=15) as response:
         data = response.read().decode()
         json_data = json.loads(data)
 

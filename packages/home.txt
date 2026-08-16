@@ -1,0 +1,4 @@
+kitty
+python3-pip
+xclip
+fonts-firacode

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+command_name="${1:-help}"
+[[ $# -gt 0 ]] && shift
+
+case "$command_name" in
+  install) exec "$ROOT/install.sh" "$@" ;;
+  doctor) exec "$ROOT/scripts/doctor.sh" "$@" ;;
+  status) exec "$ROOT/scripts/status.sh" "$@" ;;
+  update) exec "$ROOT/scripts/update.sh" "$@" ;;
+  backup) exec "$ROOT/push_dotfiles.sh" "$@" ;;
+  rollback) exec "$ROOT/scripts/rollback.sh" "$@" ;;
+  test) exec "$ROOT/tests/run.sh" "$@" ;;
+  help|-h|--help)
+    cat <<'EOF'
+Uso: ./dotfiles <comando> [opções]
+
+  install   Instala um perfil
+  doctor    Diagnostica dependências, links e compatibilidade
+  status    Resume Git, plataforma e links gerenciados
+  update    Atualiza o repositório com fast-forward
+  backup    Cria commit local; --push envia ao remoto
+  rollback  Restaura backups da última instalação
+  test      Executa testes locais sem alterar a máquina
+EOF
+    ;;
+  *) echo "Comando desconhecido: $command_name" >&2; exit 2 ;;
+esac

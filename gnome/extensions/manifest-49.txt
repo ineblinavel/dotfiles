@@ -1,0 +1,5 @@
+add-to-desktop@tommimon.github.com
+arcmenu@arcmenu.com
+blur-my-shell@aunetx
+dash-to-dock@micxgx.gmail.com
+Move_Clock@rmy.pobox.com

@@ -1,0 +1,2 @@
+INSTALL_KITTY=true
+INSTALL_GNOME=false

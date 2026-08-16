@@ -44,6 +44,9 @@ Thumbs.db
 local/
 tmp/
 temp/
+gnome/gnome_settings.dconf.new
+.ruff_cache/
+__pycache__/
 
 # Emacs
 *~

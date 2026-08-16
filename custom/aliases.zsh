@@ -2,8 +2,8 @@
 
 # --- Aliases Básicos ---
 alias c='clear'
-alias py='python3'
-alias myip="curl http://ipecho.net/plain; echo"
+command -v python3 >/dev/null 2>&1 && alias py='python3'
+alias myip="curl -fsSL https://api.ipify.org; echo"
 alias zshconfig="nvim ~/.zshrc"
 alias omz="cd ~/.oh-my-zsh"
 alias aliases="nvim ~/.oh-my-zsh/custom/aliases.zsh" # Alias para editar este arquivo
@@ -14,14 +14,20 @@ alias ccp="xclip -selection clipboard"
 
 # --- Aliases de Produtividade (Sugestões) ---
 # Substitutos modernos - ferramentas CLI melhoradas
-alias ls='eza --icons'
-alias la='eza -la'
-alias l='eza -l --header'
-alias ll='eza -lah'
-alias tree='eza --tree'
-alias lt='eza --tree -L 3'
-alias cat='batcat'
-alias fd='fdfind'
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza --icons'
+    alias la='eza -la'
+    alias l='eza -l --header'
+    alias ll='eza -lah'
+    alias tree='eza --tree'
+    alias lt='eza --tree -L 3'
+fi
+if command -v batcat >/dev/null 2>&1; then
+    alias cat='batcat'
+elif command -v bat >/dev/null 2>&1; then
+    alias cat='bat'
+fi
+command -v fdfind >/dev/null 2>&1 && alias fd='fdfind'
 
 # Ferramentas modernas (se instaladas)
 if command -v rg &> /dev/null; then
@@ -49,13 +55,13 @@ mcd() {
 
 # Fazer backup de um arquivo com timestamp
 backup() {
-    cp "$1" "$1_$(date +%Y-%m-%d_%H-%M-%S).bak"
+    cp -- "$1" "${1}_$(date +%Y-%m-%d_%H-%M-%S).bak"
 }
 fco() {
   local branches branch
   branches=$(git branch -a | sed 's/^\s*//' | sed 's/remotes\/origin\///' | grep -v HEAD) &&
   branch=$(echo "$branches" | fzf-tmux -d 20 -- --exit-0 --prompt="Checkout > " --multi) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/origin/##")
+  git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/origin/##")"
 }
 
 # fbr - Fuzzy Branch (similar ao fco, mas focado em listar)
@@ -234,7 +240,7 @@ bindkey '^g' git_add_commit
 alias grubc="sudo micro /etc/default/grub"
 
 # Backup automático
-alias backup-dotfiles='~/.local/bin/backup-configs.sh'
+alias backup-dotfiles='dotfiles backup'
 
 # Docker Compose shortcuts (usa o plugin oficial)
 alias dc='docker compose'
